@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -89,15 +90,15 @@ public class FilteringApples {
     // [Apple{weight=10, color='red'}, Apple{weight=100, color='green'}, Apple{weight=150, color='red'}]
     System.out.println(inventory);
 
-//    inventory.sort(new Comparator<Apple>() {
-//      @Override
-//      public int compare(Apple o1, Apple o2) {
-//        return o2.getWeight().compareTo(o1.getWeight());
-//      }
-//    });
-//
-//    // [Apple{weight=150, color='red'}, Apple{weight=100, color='green'}, Apple{weight=10, color='red'}]
-//    System.out.println(inventory);
+    inventory.sort(new Comparator<Apple>() {
+      @Override
+      public int compare(Apple o1, Apple o2) {
+        return o2.getWeight().compareTo(o1.getWeight());
+      }
+    });
+
+    // [Apple{weight=150, color='red'}, Apple{weight=100, color='green'}, Apple{weight=10, color='red'}]
+    System.out.println(inventory);
 
      inventory.sort((Apple a1, Apple a2) -> a2.getWeight().compareTo(a1.getWeight()));
 
