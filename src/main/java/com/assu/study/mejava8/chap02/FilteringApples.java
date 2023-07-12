@@ -8,6 +8,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
+import static java.util.Comparator.comparing;
+
 @SpringBootApplication
 public class FilteringApples {
   public static void main(String[] args) {
@@ -101,6 +103,9 @@ public class FilteringApples {
     System.out.println(inventory);
 
      inventory.sort((Apple a1, Apple a2) -> a2.getWeight().compareTo(a1.getWeight()));
+
+     // 메서드 레퍼런스 사용
+    inventory.sort(comparing(Apple::getWeight));
 
     // [Apple{weight=150, color='red'}, Apple{weight=100, color='green'}, Apple{weight=10, color='red'}]
      System.out.println(inventory);

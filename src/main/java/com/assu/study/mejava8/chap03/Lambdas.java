@@ -26,7 +26,7 @@ public class Lambdas {
 
     int a = 1;
     Runnable r4 = () -> System.out.println(a);
-    a = 2;
+    //a = 2;
   }
   public static void process(Runnable r) {
     r.run();

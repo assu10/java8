@@ -5,14 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.IntPredicate;
-import java.util.function.Predicate;
+import java.util.function.*;
 
 @SpringBootApplication
 public class FunctionalInterfaces {
-  public static void main(String[] args) {
+  public static <ele> void main(String[] args) {
     String[] strings = {"abcde", "", "ds3b"};
     List<String> listOfStrings = Arrays.asList(strings);
 
@@ -28,7 +25,11 @@ public class FunctionalInterfaces {
     //
     //b
     //forEach(listOfStrings, (String s) -> System.out.println(s));
+    Function<String, Integer> stringToInteger = (String s) -> Integer.parseInt(s);
+    Function<String, Integer> stringToInteger2 = Integer::parseInt;
 
+    BiPredicate<List<String>, String> stringList = (list, ele) -> list.contains(ele);
+    BiPredicate<List<String>, String> stringList2 = List::contains;
 
     ///// Function
     List<Integer> stringLengths = map(Arrays.asList("abcde", "", "ddd"),
