@@ -72,15 +72,16 @@ public class StreamBasic {
   // 중간 연산 과정
   public static List<String> getLowCaloricDishesNamesInJava83(List<Dish> dishes) {
     return dishes.stream()
+            .limit(3) // 중간 연산
             .filter(d -> {
               System.out.println("filter: "+ d.getName());
-              return d.getCalories() > 100;
+              return d.getCalories() < 500;
             }) // 중간 연산
             .map(d -> {
               System.out.println("map: "+ d.getName());
               return d.getName();
             }) // 중간 연산
-            .limit(3) // 중간 연산
+
             .collect(toList()); // 최종 연산
   }
 }
