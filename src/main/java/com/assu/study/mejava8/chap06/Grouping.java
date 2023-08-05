@@ -7,20 +7,20 @@ import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.*;
 
 public class Grouping {
-  enum CaloricLevel { DIET, NOMAL, FAT }
+  enum CaloricLevel { DIET, NORMAL, FAT }
   public static void main(String[] args) {
 
     System.out.println(groupByType());
     // {MEAT=[pork, beef, chicken], FISH=[prawns, salmon], OTHER=[french fries, rice, season fruit, pizza]}
 
     System.out.println(groupByCaloricLevel());
-    // {FAT=[pork], NOMAL=[beef, french fries, pizza, salmon], DIET=[chicken, rice, season fruit, prawns]}
+    // {FAT=[pork], NORMAL=[beef, french fries, pizza, salmon], DIET=[chicken, rice, season fruit, prawns]}
 
     System.out.println(groupByTypeAndCaloricLevel());
     // {
-    // MEAT={FAT=[pork], NOMAL=[beef], DIET=[chicken]},
-    // FISH={NOMAL=[salmon], DIET=[prawns]},
-    // OTHER={NOMAL=[french fries, pizza], DIET=[rice, season fruit]}
+    // MEAT={FAT=[pork], NORMAL=[beef], DIET=[chicken]},
+    // FISH={NORMAL=[salmon], DIET=[prawns]},
+    // OTHER={NORMAL=[french fries, pizza], DIET=[rice, season fruit]}
     // }
 
 
@@ -42,7 +42,7 @@ public class Grouping {
     // {MEAT=1900, FISH=850, OTHER=1550}
 
     System.out.println(caloricLevelsByType());
-    // {MEAT=[FAT, NOMAL, DIET], FISH=[NOMAL, DIET], OTHER=[NOMAL, DIET]}
+    // {MEAT=[FAT, NORMAL, DIET], FISH=[NORMAL, DIET], OTHER=[NORMAL, DIET]}
   }
 
   // 타입으로 분류 (메서드 레퍼런스)
@@ -59,7 +59,7 @@ public class Grouping {
                       if (dish.getCalories() <= 400) {
                         return CaloricLevel.DIET;
                       } else if (dish.getCalories() <= 700) {
-                        return CaloricLevel.NOMAL;
+                        return CaloricLevel.NORMAL;
                       } else {
                         return CaloricLevel.FAT;
                       }
@@ -75,7 +75,7 @@ public class Grouping {
                       if (dish.getCalories() <= 400) {
                         return CaloricLevel.DIET;
                       } else if (dish.getCalories() <= 700) {
-                        return CaloricLevel.NOMAL;
+                        return CaloricLevel.NORMAL;
                       } else {
                         return CaloricLevel.FAT;
                       }
@@ -131,7 +131,7 @@ public class Grouping {
               if (dish.getCalories() <= 400) {
                 return CaloricLevel.DIET;
               } else if (dish.getCalories() <= 700) {
-                return CaloricLevel.NOMAL;
+                return CaloricLevel.NORMAL;
               } else {
                 return CaloricLevel.FAT;
               }
