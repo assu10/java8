@@ -25,6 +25,9 @@ public class ParallelStreamsHarness {
     // 포크/조인 프레임워크를 이용해서 병렬 합계 수행
     System.out.println("ForkJoin sum done in: " + measureSumPerf(ForkJoinSumCalculator::forkJoinSum, 10_000_000L) + " ms");
     //System.out.println("ForkJoin sum result in: " + resultSum(ForkJoinSumCalculator::forkJoinSum, 8L));
+
+    // 12
+    //System.out.println(Runtime.getRuntime().availableProcessors());
   }
 
   // Function<T,R> 은 T -> R
