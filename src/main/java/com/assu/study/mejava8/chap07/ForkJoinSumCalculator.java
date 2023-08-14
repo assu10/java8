@@ -71,10 +71,13 @@ public class ForkJoinSumCalculator
 
     // 두 번째 서브 태스크를 동기 실행, 이 때 추가로 분할이 일어날 수 있음
     Long rightResult = rightTask.compute();
+
     // 첫 번째 서브 태스크의 결과를 읽거나 아직 결과가 없으면 기다림
     Long leftResult = leftTask.join();
 
     // 두 서브 태스크의 결과를 조합한 값이 이 태스크의 결과
+    System.out.println("(leftResult + rightResult): " + (leftResult + rightResult));
+    System.out.println();
     return leftResult + rightResult;
   }
 
