@@ -23,8 +23,8 @@ public class ParallelStreamsHarness {
     //System.out.println("SideEffect parallel sum done in: " + measureSumPerf(ParallelStreams::sideEffectParallelSum, 10_000_000L) + " ms");
 
     // 포크/조인 프레임워크를 이용해서 병렬 합계 수행
-    //System.out.println("ForkJoin sum done in: " + measureSumPerf(ForkJoinSumCalculator::forkJoinSum, 10_000_000L) + " ms");
-    System.out.println("ForkJoin sum result in: " + resultSum(ForkJoinSumCalculator::forkJoinSum, 8L));
+    System.out.println("ForkJoin sum done in: " + measureSumPerf(ForkJoinSumCalculator::forkJoinSum, 10_000_000L) + " ms");
+    //System.out.println("ForkJoin sum result in: " + resultSum(ForkJoinSumCalculator::forkJoinSum, 8L));
   }
 
   // Function<T,R> 은 T -> R
