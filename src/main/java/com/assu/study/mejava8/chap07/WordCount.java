@@ -28,6 +28,7 @@ public class WordCount {
 //    // 잘못된 예시 - Found : 15 words
 //    System.out.println("Found : " + countWords(stream.parallel()) + " words");
 
+
     Spliterator<Character> spliterator = new WordCounterSpliterator(SENTENCE);
     // 두 번째 인수(true)는 병렬 스트림 생성 여부를 지시함
     Stream<Character> stream = StreamSupport.stream(spliterator, true);
