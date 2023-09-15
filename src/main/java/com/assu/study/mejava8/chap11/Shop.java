@@ -13,9 +13,16 @@ public class Shop {
   }
 
   // 제품명에 해당하는 가격 반환
-  public double getPrice(String product) {
+//  public double getPrice(String product) {
+//    double price = calculatePrice(product);
+//    return price;
+//  }
+
+  public String getPrice(String product) {
     double price = calculatePrice(product);
-    return price;
+    Discount.Code code = Discount.Code.values()[random.nextInt(Discount.Code.values().length)];
+
+    return name + ":" + price + ":" + code;
   }
 
   private double calculatePrice(String product) {

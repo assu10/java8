@@ -7,11 +7,15 @@ public class BestPriceFinderMain {
   private static BestPriceFinder bestPriceFinder = new BestPriceFinder();
 
   public static void main(String[] args) {
-    execute("basic", () -> bestPriceFinder.findPrices("CoolPrice"));
-    execute("findPricesParallel", () -> bestPriceFinder.findPricesParallel("CoolPrice"));
-    execute("findPricesFuture", () -> bestPriceFinder.findPricesFuture("CoolPrice"));
-    execute("findPricesExecutor", () -> bestPriceFinder.findPricesExecutor("CoolPrice"));
+//    execute("basic", () -> bestPriceFinder.findPrices("CoolPrice"));
+//    execute("findPricesParallel", () -> bestPriceFinder.findPricesParallel("CoolPrice"));
+//    execute("findPricesFuture", () -> bestPriceFinder.findPricesFuture("CoolPrice"));
+//    execute("findPricesExecutor", () -> bestPriceFinder.findPricesExecutor("CoolPrice"));
+//    execute("findPricesSequential", () -> bestPriceFinder.findPricesSequential("CoolPrice"));
+//    execute("findPriceFuture", () -> bestPriceFinder.findPriceFuture("CoolPrice"));
+    //execute("findPriceInUSD", () -> bestPriceFinder.findPriceInUSD("CoolPrice"));
 
+    bestPriceFinder.printPricesStream("CoolPrice");
     // System.out.println(Runtime.getRuntime().availableProcessors()); // 12
   }
 
